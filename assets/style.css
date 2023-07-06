@@ -1,7 +1,7 @@
 /* Main style sheet */
 body{
     background: rgb(132, 93, 184);
-    color:white;
+    color:rgb(12, 12, 12);
     font-size: 35px;
 }
 header{
@@ -42,4 +42,10 @@ header{
 #timer{
     color:wheat;
     margin-bottom:10    px;
+}
+
+#highScores{
+    display: none;
+
+
 }

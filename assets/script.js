@@ -18,6 +18,9 @@ answersUl.setAttribute("id","answers-ul");
 const startOver = document.createElement("button");
 startOver.setAttribute("class","btn btn-lg btn-success");
 startOver.textContent = "Try Again";
+var highScores = document.getElementById("highScores");
+var submitBtn = document.getElementById("Submit");
+var initials = document.getElementById("initials");
 
 //alerts
 const correctAlert = document.createElement("div");
@@ -50,10 +53,10 @@ const game = {
     correct: 0,
     questions: [
         {
-            q: "What is the reason for wrapping the entire content of a JavaScript source file in a function?",
+            q: "What does DRY Means in coding?",
             a: [
-                "Creates a private namespace to avoid potential name clashes between different JavaScript modules and libraries.", "Doesn't matter",
-                "If you call it .. they will come"
+                "Do not repeat yourself", "Doesn't matter",
+                "Something is not wet"
             ],
             c: 0
         },
@@ -140,7 +143,10 @@ const game = {
             //get the final score and append it to the page
             let Finalscore = game.getScore();
             timerEl.textContent = Finalscore;
+            highScores.removeAttribute("id");
         }
+
+        
     },
     timerStart:function(){
         //make sure we have one timer
@@ -167,6 +173,9 @@ const game = {
         }  
     },
 
+
+    
+
     
     getAnswer:function(e){
         //get the item we clicked on and check the data attribute
@@ -187,7 +196,12 @@ const game = {
                 game.showNextQuestion();   
             }
         } 
-    }
+    },
+    saveScore: function(){
+        // Save score function
+        
+        confirm ("High Scores: " + initials.value +"-" + game.correct) 
+}
 }
 //run when the page loads
 game.init();
@@ -195,3 +209,4 @@ game.init();
 startButton.addEventListener("click",game.startGame);
 startOver.addEventListener("click",game.startGame);
 answersUl.addEventListener("click", game.getAnswer);
+submitBtn.addEventListener("click", game.saveScore)
