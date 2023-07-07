@@ -21,6 +21,7 @@ startOver.textContent = "Try Again";
 var highScores = document.getElementById("highScores");
 var submitBtn = document.getElementById("Submit");
 var initials = document.getElementById("initials");
+var form = document.querySelector("form");
 
 //alerts
 const correctAlert = document.createElement("div");
@@ -202,25 +203,24 @@ const game = {
        
 }
 
- function saveScore(){
-
-
+ function saveScore(event){
 
     // Check for LocalStorage support.
-    if (localStorage) {
-  
-      // Add an event listener for form submissions
-      document.getElementById("highScores").addEventListener("submit", function() {
-        // Get the value of the name field.
-        var name = document.getElementById("initials").value;
+    {
+        event.preventDefault()
+       
   
         // Save the name in localStorage.
-        localStorage.setItem("initials", name);
-      });
+        localStorage.setItem("initials", initials.value);
+        
+        
+
+
+      };
   
     }
   
-  }
+  
 
 
 //run when the page loads
@@ -229,4 +229,4 @@ game.init();
 startButton.addEventListener("click",game.startGame);
 startOver.addEventListener("click",game.startGame);
 answersUl.addEventListener("click", game.getAnswer);
-submitBtn.addEventListener("click", game.saveScore)
+form.addEventListener("submit", saveScore);
