@@ -61,10 +61,10 @@ const game = {
             c: 0
         },
         {
-            q: "What are the benefits, of including 'use strict' at the beginning of a JavaScript source file?",
+            q: "Arrays in JavaScript can be used to store",
             a: [
-                "This is not a thing",
-                "You get the paddle if you get an error",
+                "Numbers and Strings",
+                "Other arrays and booleans",
                 "Enforce stricter parsing and error handling on your JavaScript code at runtime"
             ],
             c: 2
