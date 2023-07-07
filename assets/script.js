@@ -42,6 +42,7 @@ function clearAlert() {
 
 
 
+
 //Game Object
 const game = {
     timer: 10,
@@ -65,16 +66,16 @@ const game = {
             a: [
                 "Numbers and Strings",
                 "Other arrays and booleans",
-                "Enforce stricter parsing and error handling on your JavaScript code at runtime"
+                "all of the above"
             ],
             c: 2
         },
         {
-            q: "What is NaN? What is its type?",
+            q: "What is NaN? in coding",
             a: [
-                "A value that is “not a number”,its type is: Number",
-                "This is what I call my Grandmother",
-                "Nationally Association of No Namers"
+                "A value that is “not a number” and its type is: Number",
+                "National Advance Nation",
+                "How you take a code out"
             ],
             c: 0
         }
@@ -197,12 +198,27 @@ const game = {
             }
         } 
     },
-    saveScore: function(){
-        // Save score function
-        
-        confirm ("High Scores: " + initials.value +"-" + game.correct) 
+
+       
 }
-}
+
+window.onload = function() {
+
+    // Check for LocalStorage support.
+    if (localStorage) {
+  
+      // Add an event listener for form submissions
+      document.getElementById("highScores").addEventListener("submit", function() {
+        // Get the value of the name field.
+        var name = document.getElementById("initials").value;
+  
+        // Save the name in localStorage.
+        localStorage.setItem("initials", name);
+      });
+  
+    }
+  
+  }
 //run when the page loads
 game.init();
 // ==== Event Handlers ==== //
