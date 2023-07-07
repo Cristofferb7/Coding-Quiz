@@ -102,8 +102,8 @@ const game = {
     showNextQuestion: function () {
         clearAlert();
           //Check to see if we are out of questions
-        console.log(`Question # ${game.questionIndex}`);
-        console.log(`Total Questions # ${game.questions.length}`);
+        // console.log(`Question # ${game.questionIndex}`);
+        // console.log(`Total Questions # ${game.questions.length}`);
 
 
         if(game.questionIndex < game.questions.length){
@@ -113,7 +113,7 @@ const game = {
 
 
             let currentQuestion = game.questions[game.questionIndex].q;
-            console.log(`Current Question is: ${currentQuestion}`);
+            // console.log(`Current Question is: ${currentQuestion}`);
 
             
             questionDiv.innerHTML =  "<h3>"+ currentQuestion + "</h3>";
@@ -155,10 +155,10 @@ const game = {
         clearInterval(counter);
         //our timer interval every second
         counter = setInterval(game.countDown, 1000);
-        console.log(`Timer Started.`);
+        // console.log(`Timer Started.`);
     },
     timerStop:function () {
-        console.log(`Stopping Timer`);
+        // console.log(`Stopping Timer`);
         clearInterval(counter);
     },
     countDown: function(){
@@ -212,7 +212,7 @@ const game = {
   
         // Save the name in localStorage.
         localStorage.setItem("initials", initials.value);
-        
+
         
 
 
