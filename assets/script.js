@@ -181,7 +181,7 @@ const game = {
     getAnswer:function(e){
         //get the item we clicked on and check the data attribute
         if(e.target.matches("li")){
-            console.log("data attribute", e.target.getAttribute("data"));
+            // console.log("data attribute", e.target.getAttribute("data"));
             //see if it's the correct anser
             if(e.target.getAttribute("data") == game.questions[game.questionIndex].c){
                 gameEl.appendChild(correctAlert);
@@ -202,7 +202,9 @@ const game = {
        
 }
 
-window.onload = function() {
+ function saveScore(){
+
+
 
     // Check for LocalStorage support.
     if (localStorage) {
@@ -219,6 +221,8 @@ window.onload = function() {
     }
   
   }
+
+
 //run when the page loads
 game.init();
 // ==== Event Handlers ==== //
