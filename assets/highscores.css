@@ -1,0 +1,53 @@
+body{
+    background: rgb(229, 225, 233);
+    color:rgb(12, 12, 12);
+    font-size: 35px;
+}
+header{
+    padding: 10px ;
+    line-height: 20px;
+    height:100px;
+    background: black;
+}
+.container{
+   font-style: italic;
+   width: 100%;
+   text-align: center;
+}
+.answerLi{
+    list-style: none;
+    color:whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:10px;
+    height:75px;
+    background: black;
+    padding: 10px;
+    border:solid 1px whitesmoke;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.answerLi:hover{
+    cursor: pointer;
+    color:white;
+    background:lightseagreen;
+    border-top: 1px solid grey;
+}
+.answerEl:active{
+    box-shadow: rgb(157, 73, 165);
+}
+#gameArea{
+    margin-top: 50px;
+    background:lightsteelblue;
+    padding: 100px;
+}
+#timer{
+    color:wheat;
+    margin-bottom:10    px;
+}
+
+#highScores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

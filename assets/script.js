@@ -18,10 +18,13 @@ answersUl.setAttribute("id","answers-ul");
 const startOver = document.createElement("button");
 startOver.setAttribute("class","btn btn-lg btn-success");
 startOver.textContent = "Try Again";
+// extra variables
 var highScores = document.getElementById("highScores");
 var submitBtn = document.getElementById("Submit");
 var initials = document.getElementById("initials");
 var form = document.querySelector("form");
+// short circuit
+var scoreArray = JSON.parse(localStorage.getItem("savedScores")) || []
 
 //alerts
 const correctAlert = document.createElement("div");
@@ -206,17 +209,22 @@ const game = {
  function saveScore(event){
 
     // Check for LocalStorage support.
-    {
+    
         event.preventDefault()
        
-  
+        var savedNewscore = {
+            initials: initials.value, 
+            score: game.correct
+        }
+
+        scoreArray.push(savedNewscore)
+
         // Save the name in localStorage.
-        localStorage.setItem("initials", initials.value);
+        localStorage.setItem("savedScores", JSON.stringify(scoreArray) );
 
-        
+        window.location.href = "./highscores.html";
 
 
-      };
   
     }
   
